@@ -1,11 +1,10 @@
-input[id="list_layout"]:checked ~ .container .cards .card
+input[id='list_layout']:checked ~ .container .cards .card
 {
     width: 100%;
 
 }
 
-input[id='list_layout']:checked ~ .container .cards
-.card .name_photo img
+input[id='list_layout']:checked ~ .container.cards .card .name_photo img
 {
     float: right;
 }
