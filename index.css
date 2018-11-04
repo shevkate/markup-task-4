@@ -4,8 +4,7 @@ input[id='list_layout']:checked ~ .container .cards .card
 
 }
 
-input[id='list_layout']:checked ~ .container .cards
-.card .name_photo img
+input[id='list_layout']:checked ~ .container .cards .card .name_photo img
 {
     float: right;
 }
