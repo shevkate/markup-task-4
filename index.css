@@ -1,82 +1,124 @@
-input[id='list_layout']:checked ~ .container .cards .card
+input[id='list_layout']:checked ~ .card
 {
-    width: 100%;
+    width: 50%;
 
-}
-
-input[id='list_layout']:checked ~ .container .cards .card .name_photo img
-{
-    float: right;
 }
 
 input
 {
-    margin-top: -170px;
-    margin-left: -300px;
+    float: left;
+    display: none;
+    width: 20px;
+    left: 0;
+    top: 20%;
+}
+
+label
+{
+    display: block;
+    margin-top: -20px;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+input[id='list_layout']:checked ~ label img
+{
+
+    transform: rotate(90deg);
+
+}
+
+body
+{
+    margin: 0;
 }
 
 .container
 {
     width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    background-color: #f6eafe;
+    padding-top: 40px;
+    background-color: #222;
+    display: table;
 
 }
 
 header
 {
-    display: table;
-    width: 100%;
-    height: 150px;
-}
-
-header div
-{
-    width: 10%;
-    display: table-cell;
+    height: 100px;
     position: relative;
-
-}
-
-input
-{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 35%;
-    left: 30%;
-    right: 45%;
+    background-color: #222;
 }
 
 header h1
 {
-    width: 90%;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
     font-family: 'Mali', cursive;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -20%);
+    color: #ffbef6;
+    animation: neon_light 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes neon_light
+{
+    from
+    {
+        text-shadow: 0 0 10px #fff
+            , 0 0 20px #fff
+            , 0 0 30px #fff
+            , 0 0 40px #ec8bb6
+            , 0 0 70px #ec8bb6
+            , 0 0 80px #ec8bb6
+            , 0 0 100px #ec8bb6
+            , 0 0 150px #ec8bb6;
+    }
+
+    to
+    {
+        text-shadow: 0 0 5px #fff
+            , 0 0 10px #fff
+            , 0 0 15px #fff
+            , 0 0 20px #ec8bb6
+            , 0 0 35px #ec8bb6
+            , 0 0 40px #ec8bb6
+            , 0 0 50px #ec8bb6
+            , 0 0 75px #ec8bb6;
+    }
 }
 
 .cards
 {
-    display: table;
+    display: table-cell;
     width: 100%;
+    text-align: center;
 }
 
 .card
 {
-    margin-bottom: 40px;
-    width: calc(100% / 3 - 10px);
+
+    position: relative;
+    margin: 10px;
+    padding: 20px;
+    width: 270px;
     text-align: left;
     display: inline-table;
 }
 
+.card:hover
+{
+    border: 1px solid #f60056;
+    box-shadow: 0 0 20px #f60056;
+}
+
 .name_photo img
 {
-    width: 250px;
-    height: 250px;
-    margin-left: 90px;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
     border-radius: 200px; /* Радиус скругления */
     border: 5px solid #ec8bb6; /* Параметры рамки */
     box-shadow: 0 0 10px #ec8bb6;
@@ -96,21 +138,25 @@ img:hover
         box-shadow: 0 0 0 5px #ec8bb6;
         opacity: 1;
     }
+
     25%
     {
         box-shadow: 0 0 0 1px #ec8bb6;
         opacity: 1;
     }
+
     50%
     {
         box-shadow: 0 0 0 8px #ec8bb6;
         opacity: 1;
     }
+
     75%
     {
         box-shadow: 0 0 0 5px #ec8bb6;
         opacity: 1;
     }
+
     100%
     {
         box-shadow: 0 0 0 10px #ec8bb6;
@@ -122,18 +168,43 @@ img:hover
 {
     text-align: center;
     font-family: 'Mali', cursive;
+    color: #f60056;
 
 }
 
 li
 {
-    list-style-image: url("heart.jpg");
+    list-style-image: url(heart.png);
     font-family: 'Mali', cursive;
+    color: #f60056;
+    margin: 0 auto;
+
+}
+
+p.details
+{
+    display: none;
+}
+
+input[id='list_layout']:checked ~ .card section.info
+{
+
+    display: none;
+
+}
+
+input[id='list_layout']:checked ~ .card p.details
+{
+
+    display: block;
+    font-family: 'Mali', cursive;
+    color: #f60056;
+    text-align: center;
 }
 
 @media (max-width: 925px)
 {
-    .cards > section.card
+    .cards > card
     {
         width: 100%;
     }
