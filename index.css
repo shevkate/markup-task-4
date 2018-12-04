@@ -105,6 +105,7 @@ header h1
     width: 270px;
     text-align: left;
     display: inline-table;
+    border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .card:hover
